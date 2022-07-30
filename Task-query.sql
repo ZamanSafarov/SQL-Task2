@@ -128,7 +128,7 @@ EXEC usp_LikePost @Id =4
 CREATE PROCEDURE usp_ResetPassword(@Login VARCHAR(120),@New_Password NVARCHAR(60)) 
 AS
 BEGIN
-	 UPDATE Users SET @New_Password	= Password WHERE @Login = Login;
+	 UPDATE Users SET Password=@New_Password WHERE @Login = Login;
 END;
 
 EXEC usp_ResetPassword @Login = 'Orxan Pasayev', @New_Password='orxanpashayev123'
